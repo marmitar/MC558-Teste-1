@@ -1,0 +1,46 @@
+\usepackage[nameinlink,noabbrev,brazilian]{cleveref}
+\usepackage{enumitem}
+
+
+%% Ajusta espaços para o Display Mode %%
+\newcommand{\reducemathskip}[1][0.5em]{%
+    \setlength{\abovedisplayskip}{1pt}%
+    \setlength{\belowdisplayskip}{#1}%
+    \setlength{\abovedisplayshortskip}{#1}%
+    \setlength{\belowdisplayshortskip}{#1}%
+}
+
+%% Ambiente para Teoremas %%
+\newtheorem{theorem}{Teorema}
+\newtheorem{lemma}[theorem]{Lema}
+\numberwithin{theorem}{section}
+
+%% Ambiente para Definições %%
+\theoremstyle{definition}
+\newtheorem{definition}{Definição}
+\numberwithin{definition}{section}
+
+%% Lista de Casos %%
+\newlist{casos}{enumerate}{2}
+\setlist[casos]{
+    wide,
+    labelwidth    = {\parindent},
+    listparindent = {\parindent},
+    parsep        = {\parskip},
+    topsep        = {0pt},
+    label         = {\textbf{Caso \arabic*}:}
+}
+% \setlist[casos,2]{label=\textbf{Caso \arabic{casosi}\alph*}:}
+
+%% Casos Nomeados: \item[Caso Base:] %%
+\newlist{ncasos}{description}{2}
+\setlist[ncasos]{
+    wide,
+    listparindent = {\parindent},
+    parsep        = {\parskip},
+    topsep        = {0pt}
+}
+
+%% Formatação do Cleveref %%
+% \crefformat{definition}{#2definição~#1#3}
+% \crefformat{proof}{#2demonstração~#1#3}
