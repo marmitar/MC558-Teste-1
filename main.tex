@@ -19,7 +19,7 @@
 
 %%%%%%%%%%%%%%%%%
 %% Referências %%
-\usepackage{nameref, xcolor}
+\usepackage{nameref, xcolor, url}
 
 \usepackage{hyperref}
 \hypersetup{
@@ -39,6 +39,10 @@
     \def\swaptext##1{#3}%
     \hyperref[#2]{\swaptext{#1*{#2}}}%
 }}
+
+\renewcommand{\url}[1]{
+    \href{#1}{\texttt{#1}}
+}
 
 
 %%%%%%%%%%%%%%%%%%%%%%
