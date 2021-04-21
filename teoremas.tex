@@ -37,31 +37,27 @@
 %% Ambiente para Teoremas %%
 \declaretheoremstyle[
     thmbox = M,
-    %
     numberlike = theorem,
     postheadhook = \theorembookmark
 ]{teorema}
 
 \declaretheorem{theorem}[
     name = Teorema,
-    refname = {teorema,teoremas},
-    Refname= {Teorema,Teoremas},
-    %
+    % refname = {teorema,teoremas},
+    % Refname= {Teorema,Teoremas},
     style = teorema,
     numberwithin = section
 ]
 \declaretheorem{lemma}[
-    name = Lema,
-    refname = {lema,lemas},
-    Refname= {Lema,Lemas},
-    %
+    name  = Lema,
     style = teorema
 ]
 \declaretheorem{proposition}[
-    name = Proposição,
-    refname = {proposição,proposições},
-    Refname= {Proposição,Proposições},
-    %
+    name  = Proposição,
+    style = teorema
+]
+\declaretheorem{corollary}[
+    name  = Corolário,
     style = teorema
 ]
 
