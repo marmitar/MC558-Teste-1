@@ -1,0 +1,10 @@
+\begin{corollary}
+    Seja $S = (s_1, \ldots, s_n)$ uma sequência arbórea de tamanho $n > 2$. Então existe um índice $1 \leq i < n$ onde $S$ é estritamente decrescente, isto é,
+    \[
+        s_1 \geq \cdots \geq s_{i-1} \geq s_i > s_{i+1} \geq \cdots \geq s_n \geq 1
+    \]
+\end{corollary}
+
+\begin{proof}
+    Pelas \cref{prop:seqarb:ultimoum,prop:seqarb:primeirogrande}, temos que $s_1 > s_n = 1$, ou seja, o primeiro elemento é maior que o último. Portanto, pelo menos um elemento deverá ser maior que seu sucessor em $S$.
+\end{proof}

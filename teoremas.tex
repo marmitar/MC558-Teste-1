@@ -37,8 +37,9 @@
 %% Ambiente para Teoremas %%
 \declaretheoremstyle[
     thmbox = M,
-    numberlike = theorem,
-    postheadhook = \theorembookmark\reducemathskip
+    sharenumber = theorem,
+    preheadhook = \vskip1.5em,
+    postheadhook = \theorembookmark\reducemathskip,
 ]{teorema}
 
 \declaretheorem{theorem}[

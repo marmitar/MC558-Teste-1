@@ -1,3 +1,17 @@
 Seja $d_1 \geq d_2 \geq \cdots \geq d_n$ uma sequência de inteiros positivos. Prove que $d = (d_1, \ldots, d_n)$ é uma sequência de graus de alguma \textbf{árvore} se, e somente se, $\sum_{i=1}^n d_i = 2n - 2$. Por exemplo, existe uma árvore cuja sequência de graus é $(4,3,2,1,1,1,1,1)$, mas não existe uma árvore cuja sequência é $(4,3,3,2,1,1,1,1)$.
 
 \itemdsep
+
+\begin{definition}[Sequência Arbórea]
+    Uma sequência finita $S = (s_1, s_2, \ldots, s_n)$ de inteiros positivos é \textit{arbórea} se for não-crescente e a soma de seus elementos é $2n - 2$. Isto é,
+    \[
+        s_1 \geq s_2 \geq \cdots \geq s_n \geq 1
+        \qquad \text{ e } \qquad
+        \sum_{i = 1}^n s_i = 2 n - 2
+    \]
+\end{definition}
+
+\input{respostas/21-graus-arvore}
+\input{respostas/23-seq-propriedades}
+\input{respostas/24-seq-tem-interno}
+\input{respostas/22-seq-arborea}

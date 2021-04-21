@@ -1,0 +1,53 @@
+\begin{proposition}
+    Seja $S = (s_1, \ldots, s_n)$ uma sequência arbórea de tamanho $n$. Então:
+
+    \begin{enumerate}[
+        label = {\alph*)},
+        ref = \thetheorem.\alph*,
+        parsep = 0pt,
+        itemsep = 0.2em,
+        topsep = 0pt
+    ]
+        \item $n \geq 2$;
+        \label[proposition]{prop:seqarb:tamanhodois}
+
+        \item $s_n = 1$;
+        \label[proposition]{prop:seqarb:ultimoum}
+
+        \item se $n > 2$, então $s_1 > 1$.
+        \label[proposition]{prop:seqarb:primeirogrande}
+    \end{enumerate}
+\end{proposition}
+
+\begin{proof}[Demonstração do \textref{prop:seqarb:tamanhodois}{item a)}]~
+
+    Por $n$ ser o tamanho, temos que $n \in \natural$. No entanto, se $n = 0$, a soma de $S$ é zero, que não condiz com $2 \cdot n - 2 = -2$ e $S$ não poderia ser arbórea.
+
+    Além disso, se $n = 1$ então a soma é $s_1 = 0$, que não é positivo. Logo, $S$ também não poderia ser arbórea.
+
+    Portanto, temos que $S$ só é possível com $n \geq 2$.
+\end{proof}
+
+\begin{proof}[Demonstração da \textref{prop:seqarb:ultimoum}{item b)}]~
+
+    Suponha que $s_n \ne 1$. Então, como $s_n$ deve ser positivo, só resta que $s_n \geq 2$. Por definição, $S$ é não-crescente, isto é, $s_1 \geq \cdots \geq s_n$, portanto
+    \[
+        \sum_{i = 1}^n s_i \geq \sum_{i = 1}^n s_n \geq \sum_{i = 1}^n 2 = 2 n > 2 n - 2
+    \]
+
+    Logo, a soma de $S$ não é $2n - 2$, ou seja, $S$ não é arbórea.
+
+    Como $S$ é arbórea, $s_n$ deve ser igual a 1.
+\end{proof}
+
+\begin{proof}[Demonstração da \textref{prop:seqarb:primeirogrande}{item c)}]~
+
+    Suponha que $s_1 = 1$. Como $S$ é não-crescente e só contém inteiros positivos, $1 = s_1 \geq \cdots \geq s_n \geq 1$, ou seja, $s_i = 1$ para todo $1 \leq i \leq n$. Logo,
+    \[
+        \sum_{i = 1}^n s_i = \sum_{i = 1}^n 1 = n = 2n - 2
+    \]
+
+    O que implica que $n = 2$. Portanto, pela contrapositiva, se $n \ne 2$, temos que $s_1 \ne 1$.
+
+    Então, para um $n > 2$ e como $s_1$ deve ser positivo, segue que $s_1 > 1$.
+\end{proof}
