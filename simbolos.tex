@@ -1,12 +1,11 @@
-\makeatletter
-
-\usepackage{amsthm, amsmath, amssymb, bm, mathtools}
-\usepackage{enumitem, etoolbox, xpatch, xspace}
+\usepackage{amsmath, amssymb, bm, mathtools}
+\usepackage{etoolbox, xpatch, xspace}
 % \usepackage[mathcal]{euscript}
 % \usepackage[scr]{rsfso}
-\usepackage{mathptmx}
-\usepackage{relsize, centernot}
+\usepackage{mathptmx, relsize, centernot}
 
+
+\makeatletter
 
 %% Símbolo QED %%
 \renewcommand{\qedsymbol}{\ensuremath{\mathsmaller\blacksquare}}
@@ -54,9 +53,10 @@
     \endgroup%
 }
 
-%% Novos Operadores: \modulo, \symdif %%
+%% Novos Operadores: \modulo, \symdif, \grau %%
 \DeclareMathOperator{\modulo}{~mod~}
 \DeclareMathOperator{\symdif}{\mathrel{\triangle}}
+\DeclareMathOperator{\grau}{deg}
 
 %% Operadores Delimitados: \abs{\sum_i^j}, x \equiv y \emod{n} %%
 \newcommand{\abs}[1]{{\left\lvert\,#1\,\right\rvert}}

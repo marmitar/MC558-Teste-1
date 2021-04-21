@@ -1,5 +1,29 @@
-\usepackage[nameinlink,noabbrev,brazilian]{cleveref}
-\usepackage{enumitem}
+\usepackage{enumitem, amsthm}
+\usepackage[open]{bookmark}
+
+\makeatletter
+
+% problemas com o ambiente 'proof' do thmbox
+\LetLtxMacro\ams@proof\proof
+\LetLtxMacro\ams@end@proof\endproof
+
+\usepackage{thmtools}
+
+\AtBeginDocument{%
+    \LetLtxMacro\proof\ams@proof
+    \LetLtxMacro\endproof\ams@end@proof
+}
+
+% Marcador lateral para teoremas
+\newcommand*{\theorembookmark}{%
+    \bookmark[
+        dest = \@currentHref,
+        rellevel = 1,
+        keeplevel,
+    ]{%
+        \thmt@thmname\space\csname the\thmt@envname\endcsname
+    }%
+}
 
 
 %% Ajusta espaços para o Display Mode %%
@@ -11,14 +35,46 @@
 }
 
 %% Ambiente para Teoremas %%
-\newtheorem{theorem}{Teorema}
-\newtheorem{lemma}[theorem]{Lema}
-\numberwithin{theorem}{section}
+\declaretheoremstyle[
+    thmbox = M,
+    %
+    numberlike = theorem,
+    postheadhook = \theorembookmark
+]{teorema}
+
+\declaretheorem{theorem}[
+    name = Teorema,
+    refname = {teorema,teoremas},
+    Refname= {Teorema,Teoremas},
+    %
+    style = teorema,
+    numberwithin = section
+]
+\declaretheorem{lemma}[
+    name = Lema,
+    refname = {lema,lemas},
+    Refname= {Lema,Lemas},
+    %
+    style = teorema
+]
+\declaretheorem{proposition}[
+    name = Proposição,
+    refname = {proposição,proposições},
+    Refname= {Proposição,Proposições},
+    %
+    style = teorema
+]
 
 %% Ambiente para Definições %%
-\theoremstyle{definition}
-\newtheorem{definition}{Definição}
-\numberwithin{definition}{section}
+\declaretheorem{definition}[
+    name = Definição,
+    refname = {definição,definições},
+    Refname= {Definição,Definições},
+    %
+    style = definition,
+    numberlike = theorem,
+    postheadhook = \theorembookmark
+]
 
 %% Lista de Casos %%
 \newlist{casos}{enumerate}{2}
@@ -41,6 +97,4 @@
     topsep        = {0pt}
 }
 
-%% Formatação do Cleveref %%
-% \crefformat{definition}{#2definição~#1#3}
-% \crefformat{proof}{#2demonstração~#1#3}
+\makeatother
