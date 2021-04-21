@@ -28,17 +28,17 @@
 
 %% Ajusta espaços para o Display Mode %%
 \newcommand{\reducemathskip}[1][0.5em]{%
-    \setlength{\abovedisplayskip}{1pt}%
+    \setlength{\abovedisplayskip}{#1}%
     \setlength{\belowdisplayskip}{#1}%
-    \setlength{\abovedisplayshortskip}{#1}%
-    \setlength{\belowdisplayshortskip}{#1}%
+    % \setlength{\abovedisplayshortskip}{#1}%
+    % \setlength{\belowdisplayshortskip}{#1}%
 }
 
 %% Ambiente para Teoremas %%
 \declaretheoremstyle[
     thmbox = M,
     numberlike = theorem,
-    postheadhook = \theorembookmark
+    postheadhook = \theorembookmark\reducemathskip
 ]{teorema}
 
 \declaretheorem{theorem}[
@@ -69,7 +69,7 @@
     %
     style = definition,
     numberlike = theorem,
-    postheadhook = \theorembookmark
+    postheadhook = \theorembookmark\reducemathskip
 ]
 
 %% Lista de Casos %%
