@@ -2,32 +2,33 @@
     Para toda sequência arbórea $S$, existe uma árvore cuja sequência de graus é $S$.
 \end{lemma}
 
+\enlargethispage{1em}
 \begin{proof}
     Vamos provar por indução que para o teorema vale para toda sequência arbórea de tamanho $n$. Note que, pela \cref{prop:seqarb:tamanhodois}, $n \geq 2$.
 
     \begin{ncasos}
         \item[Caso base:] $n = 2$. Seja $S = (s_1, s_2)$ uma sequência arbórea. Logo, $s_1 + s_2 = 2 \cdot n - 2 = 2$ e, como $s_1$ e $s_2$ devem ser positivos, temos que $s_1 = s_2 = 1$.
 
-        Considere o grafo simples $T = (\set{v_1, v_2}, \set{e})$, com $v_1$ e $v_2$ quaisquer e $e = v_1 v_2$. Note que $T$ é conexo e acíclico, visto que $e$ conecta todos os vértices de $T$ e $m(T) = 1$, portanto, $T$ é uma árvore.
+        Considere o grafo simples $T = (\set{v_1, v_2}, \set{e})$, com $v_1$ e $v_2$ quaisquer e $e = v_1 v_2$. Note que $T$ é conexo e acíclico, visto que $e$ conecta todos os vértices de $T$ e $m(T) < 2$, portanto, $T$ é uma árvore.
 
-        Além disso, temos que $\deg_T(v_1) = \deg_T(v_2) = \abs{\set{e}} = 1$, então a sequência de graus de $T$ é $(1, 1) = S$, como proposto.
+        Além disso, temos que $\grau_T(v_1) = \grau_T(v_2) = \abs{\set{e}} = 1$, então a sequência de graus de $T$ é $(1, 1) = S$, como proposto.
 
-        \item[Passo indutivo:] Suponha um $n \geq 2$ tal que para toda  uma sequência arbórea de tamanho $n$ existe um árvore com sequência de graus igual. Seja $S = (s_1, \ldots, s_n, s_{n+1})$ um sequência arbórea de tamanho $n + 1 \geq 2 + 1 > 2$.
+        \item[Passo indutivo:] Suponha um $n \geq 2$ tal que para toda  sequência arbórea $S$ de tamanho $n$ existe um árvore com sequência de graus igual a $S$. Seja $S = (s_1, \ldots, s_n, s_{n+1})$ uma sequência arbórea de tamanho $n + 1 \geq 2 + 1 > 2$.
 
         Logo, pelo \cref{corol:seqarb:decresce}, temos um índice $k$ tal que $s_k > s_{k + 1}$ e, pela \cref{prop:seqarb:ultimoum}, $s_{n + 1} = 1$. Assim, considere a sequência $S' = (s_1, \ldots, s_{k - 1}, s_k - 1, s_{k + 1}, \ldots, s_n)$ sem $s_{n + 1}$ e com $s'_k = s_k - 1$. Como $S$ era não-crescente e $s_{k - 1} \geq s_k > s_{k + 1}$, então $s'_{k - 1} > s'_k \geq s'_{k + 1}$, ou seja, $S'$ também é não-crescente. Ademais,
         \begin{align*}
-            \sum_{i = 1}^n s'_i &= \sum_{i = 1}^{k - 1} s'_i + s'_k + \sum_{i = k + 1}^n s'_i + 2 - 2 \\
+            \sum_{i = 1}^n s'_i &= \sum_{i = 1}^{k - 1} s'_i + s'_k + \sum_{i = k + 1}^n s'_i + (1 + 1 - 2) \\
             &= \sum_{i = 1}^{k - 1} s'_i + \left(s'_k + 1\right) + \sum_{i = k + 1}^n s'_i + 1 - 2 \\
             &= \sum_{i = 1}^{k - 1} s_i + s_k + \sum_{i = k + 1}^n s_i + s_{n + 1} - 2 \\
-            &= \sum_{i = 1}^{n + 1} s_i - 2 \\
-            &= (2 (n + 1) - 2) - 2 \\
+            &= \sum_{i = 1}^{n + 1} s_i - 2
+            = (2 (n + 1) - 2) - 2 \\
             &= 2 n - 2
         \end{align*}
 
-        Logo, $S'$ é uma sequência arbórea e, pela hipótese indutiva, temos uma árvore $T' = (V, E)$ cuja sequência de graus é igual a $S'$. Além disso, temos um vértice $v_i \in V$ tal que $\deg_{T'}(v_i) = s_i$.
+        Logo, $S'$ é uma sequência arbórea e, pela hipótese indutiva, temos uma árvore $T' = (V, E)$ cuja sequência de graus é igual a $S'$. Além disso, temos um vértice $v_i \in V$ tal que $\grau_{T'}(v_i) = s_i$.
 
         Seja $v_{n + 1} \not\in V$ um novo vértice e $e = v_i v_{n + 1}$. Considere também o grafo $T = (V \cup \set{v_{n + 1}}, E \cup \set{e})$. Como $v_{n + 1}$ é novo e incide apenas em $e$, sendo $v_i \ne v_{n +1}$, temos que $T$ também simples e sem ciclos. Além disso, $T'$ era conexo e $v_{n + 1}$ está conectado a $v_i$ em $T$, mantendo a conexidade. Portanto, $T$ é uma árvore.
 
-        Por fim, como $e$ é a única nova aresta de $T'$, $\deg_T(v_j) = \deg_{T'}(v_k) = s'_k = s_k$ para todo $v_k \in V \setminus \set{v_i, v_{n +1}}$. Ademais, $\deg_T(v_i) = \deg_{T'}(v_i) + 1 = s'_i - 1 = s_i$ e $\deg_T(v_{n + 1}) = 1 = s_{n + 1}$. Portanto, $S$ é a sequência de graus de $T$.
+        Por fim, como $e$ é a única nova aresta de $T'$, $\grau_T(v_j) = \grau_{T'}(v_k) = s'_k = s_k$ para todo $v_k \in V \setminus \set{v_i, v_{n +1}}$. Ademais, $\grau_T(v_i) = \grau_{T'}(v_i) + 1 = s'_i - 1 = s_i$ e $\grau_T(v_{n + 1}) = 1 = s_{n + 1}$. Portanto, $S$ é a sequência de graus de $T$.
     \end{ncasos}
 \end{proof}
