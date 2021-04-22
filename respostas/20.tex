@@ -2,7 +2,9 @@ Seja $d_1 \geq d_2 \geq \cdots \geq d_n$ uma sequência de inteiros positivos. P
 
 \itemdsep
 
-\begin{definition}[Sequência Arbórea]
+\input{respostas/21-graus-arvore}
+
+\begin{definition}[Sequência Arbórea] \label{def:seqarb}
     \setlength{\belowdisplayskip}{0pt}
     Uma sequência finita $S = (s_1, s_2, \ldots, s_n)$ de inteiros positivos é \textit{arbórea} se for não-crescente e a soma de seus elementos é $2n - 2$. Isto é,
     \[
@@ -12,7 +14,29 @@ Seja $d_1 \geq d_2 \geq \cdots \geq d_n$ uma sequência de inteiros positivos. P
     \]
 \end{definition}
 
-\input{respostas/21-graus-arvore}
 \input{respostas/23-seq-propriedades}
 \input{respostas/24-seq-tem-interno}
 \input{respostas/22-seq-arborea}
+
+\begin{theorem}
+    Seja $d_1 \geq d_2 \geq \cdots \geq d_n$ uma sequência de inteiros positivos. Então, $d = (d_1, \ldots, d_n)$ é uma sequência de graus de alguma árvore se, e somente se,
+    \[
+        \sum_{i=1}^n d_i = 2n - 2
+    \]
+\end{theorem}
+
+\begin{proof}[Demostração \direto]
+    Suponha que exista uma árvore $T = (V, E)$ cuja sequência de graus é $d$. Então, podemos considerar $V = \set{v_1, \ldots, v_n}$ tal que $\grau_T(v_i) = d_i$ para todo $1 \leq i \leq n$. Isso implica que $\abs{V} = n$. Assim, pelo \cref{lemma:arvore:somapar},
+    \[
+        \sum_{v_i \in V} \grau_T(v_i) = 2 \abs{V} - 2 = 2n - 2
+    \]
+
+    Portanto,
+    \[
+        \sum_{i = 1}^n d_i = \sum_{i = 1}^n \grau_T(v_i) = 2 n - 2
+    \]
+\end{proof}
+
+\begin{proof}[Demostração \inverso]
+    Suponha agora que $\sum_{i=1}^n d_i = 2n - 2$. Como $d$ é não-crescente e contém apenas inteiros positivos, então $d$ é uma \hyperref[def:seqarb]{sequência arbórea}. Portanto, pelo \cref{lemma:seqarb:existearvore}, existe uma árvore cuja sequência de graus é $d$.
+\end{proof}
