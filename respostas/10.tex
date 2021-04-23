@@ -1,3 +1,73 @@
 Seja $G$ um grafo $(X,Y)$-bipartido. Suponha que todo vértice em $X$ tem grau $k > 0$ e todo vértice em $Y$ tem grau $r > 0$. Descreva uma identidade (fórmula) envolvendo apenas $k$, $r$, $X$ e $Y$. Usando isto, responda se existe um tal grafo $(X,Y)$-bipartido com $k = 3$, $r = 7$ e $100.000.642$ vértices.
 
 \itemdsep
+
+\begin{lemma} \label{lemma:bipart:grausiguais}
+    Seja $G$ um grafo $(X,Y)$-bipartido. Então,
+    \[
+        \sum_{v \in X} \grau_G(v) = \sum_{v \in Y} \grau_G(v)
+    \]
+\end{lemma}
+
+\begin{proof}
+    Considere a família de conjuntos $\fam{E}$ composta das arestas incidentes a cada elmento de $X$, isto é:
+    \[
+        \fam{E} = \set{\set{e \in E(G) \mid x \in \varpsi_G(e)} \mid x \in X}
+    \]
+
+    Por definição, nenhuma aresta de $G$ é incidente dois elementos de $X$. Logo, $\fam{E}$ é disjunta por pares. Ademais, como toda aresta de $G$ é incidente a pelo menos um elemento de $X$, a família $\fam{E}$ cobre $E$, ou seja, $\bigcup \fam{E} = E$. Por conta disso, temos que
+    \begin{align*}
+        \abs{E} &= \sum_{\fam{E}_x \in \fam{E}} \abs{\fam{E}_x} \\
+            &= \sum_{x \in X} \abs{\set{e \mid x \in \varpsi(e)}} \\
+            &= \sum_{x \in X} \grau(x)
+    \end{align*}
+
+    De forma similar, chegamos a uma identidade equivalente para $Y$. Assim,
+    \[
+        \sum_{x \in X} \grau(x) = \abs{E} = \sum_{y \in Y} \grau(y)
+    \]
+\end{proof}
+
+\pagebreak
+
+\begin{theorem} \label{thm:bipart:kxry}
+    Seja $G$ um grafo $(X,Y)$-bipartido tal que todo vértice em $X$ tem grau $k > 0$ e todo vértice em $Y$ tem grau $r > 0$. Então,
+    \[
+        k \cdot \abs{X} = r \cdot \abs{Y}
+    \]
+\end{theorem}
+
+\begin{proof}
+    Partindo do \cref{lemma:bipart:grausiguais}, temos que,
+    \begin{align*}
+        \sum_{v \in X} \grau(v) &= \sum_{v \in Y} \grau(v) \\
+        \sum_{v \in X} k &= \sum_{v \in Y} r \\
+        \abs{X} \cdot k &= \abs{Y} \cdot r
+    \end{align*}
+\end{proof}
+
+\subsection{Resposta} ~
+
+Por definição, $X$ e $Y$ são disjuntos, então
+\[
+    \abs{X} + \abs{Y} = n(G)
+\]
+
+Assim, com o \cref{thm:bipart:kxry}, temos que
+\begin{align*}
+    n &= \abs{X} + \abs{Y} \\
+        &= \abs{X} + \frac{k}{r} \abs{X} \\
+        &= \frac{r + k}{r} \cdot \abs{X}
+\end{align*}
+
+Ou seja,
+\[
+    \abs{X} = \frac{r \cdot n}{r + k}
+\]
+
+Na situação, teríamos que
+\[
+    \abs{X} = \frac{7 \times 100.000.642}{7 + 3} = 70.000.449,4 \not\in \natural
+\]
+
+Como $\abs{X}$ não é inteiro, podemos afirmar que não pode existir um grafo com esses valores.

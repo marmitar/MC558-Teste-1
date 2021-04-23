@@ -16,9 +16,9 @@
 
 \undef\sum
 %% Somatório: \sum_i^j, \bigsum_i^j %%
-\DeclareSymbolFont{matext}{OMX}{cmex}{m}{n}
-\DeclareMathSymbol{\sum@d}{\mathop}{matext}{"58}
-\DeclareMathSymbol{\sum@t}{\mathop}{matext}{"50}
+\DeclareSymbolFont{cmex10}{OMX}{cmex}{m}{n}
+\DeclareMathSymbol{\sum@d}{\mathop}{cmex10}{"58}
+\DeclareMathSymbol{\sum@t}{\mathop}{cmex10}{"50}
 \DeclareMathOperator*{\sum}{\mathchoice{\sum@d}{\sum@t}{\sum@t}{\sum@t}}
 \DeclareMathOperator*{\bigsum}{\mathlarger{\mathlarger{\sum@d}}}
 
@@ -30,8 +30,10 @@
 
 \undef\Phi
 %% Novo \Phi %%
-\DeclareSymbolFont{cmrot1}{OT1}{cmr}{m}{n}
-\DeclareMathSymbol{\Phi}{\mathalpha}{cmrot1}{"08}
+\DeclareSymbolFont{cmr10}{OT1}{cmr}{m}{n}
+\DeclareSymbolFont{cmmi10}{OML}{cmm}{m}{it}
+\DeclareMathSymbol{\Phi}{\mathalpha}{cmr10}{"08}
+\DeclareMathSymbol{\varpsi}{\mathalpha}{cmmi10}{"20}
 
 \undef\fam
 %% Família de Conjuntos: \fam{S} %%
