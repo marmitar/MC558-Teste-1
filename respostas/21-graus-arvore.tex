@@ -1,35 +1,12 @@
-\vspace{-2em}
-\begin{lemma} \label{lemma:arvore:somapar}
-    Seja $T = (V, E)$ uma árvore não-vazia e finita. Então,
+\begin{theorem}[\href{https://drive.google.com/file/d/1FDjgatdkUNorsutOTGkse4YHox8nUPu1/view}{Slide 1}]
+    \label{thm:slide:sd2e}
+    Para todo grafo $G = (V, E)$ temos que
     \[
-        \sum_{v \in V} \grau_T(v) = 2 \abs{V} - 2
+        \sum_{v \in V} \grau_G(v) = 2 \abs{E}
     \]
-\end{lemma}
+\end{theorem}
 
-\enlargethispage{1em}
-\begin{proof}
-    Vamos provar por indução em $k = n(T)$.
-
-    \begin{ncasos}
-        \item[Caso base:] $k = 1$. Suponha uma árvore $T = (V, E)$ com $n(T) = 1$, ou seja, $V = \set{v_r}$ para algum valor $v_r$. Como $v_r$ é o único vértice de $T$, não existem arestas em $E$ e $v_r$ tem grau 0. Portanto:
-        \[
-            \sum_{v \in V} \grau_T(v) = \grau_T(v_r) = 0 = 2 \cdot 1 - 2
-        \]
-
-        \item[Passo indutivo:] Suponha $k \geq 1$ tal que para toda árvore $T = (V, E)$, com $n(T) = k$, o teorema é válido. Suponha também uma árvore $T = (V, E)$ com $n(T) = k + 1$. Note que, como $k \geq 1$, $n(T) \geq 2$ e, portanto, existe pelo menos uma folha $v_f \in V$.
-
-        Considere o grafo $T' = T - v_f$. Como $v_f$ é uma folha, $T'$ ainda é conexo e acíclico, ou seja, uma árvore. Além disso, $n(T') = \abs{V'} = \abs{V} - 1 = k$, então, pela hipótese indutiva:
-        \[
-            \sum_{v \in V'} \grau_{T'}(v) = 2 k - 2
-        \]
-
-        Já que $v_f$ era uma folha de $T$, ela estava conectada a um outro vértice $v_p \in V \setminus \set{v_f}$, ou seja, $v_p v_f \in E$. Essa aresta $v_p v_f$ não existe em $T'$, portanto, $\grau_T(v_p) = \grau_{T'}(v_p) + 1$. Para os demais vértices, o grau é mantido. Assim:
-        \begin{align*}
-            \sum_{v \in V} \grau_T(v)
-            &= \grau_T(v_f) + \sum_{v \in V \setminus \set{v_f}} \grau_T(v) \\
-            &= \grau_T(v_f) + 1 + \sum_{v \in V'} \grau_{T'}(v) \\
-            &= 1 + 1 + 2k - 2 = 2 (k + 1) - 2 \\
-            &= 2 n(T) - 2
-        \end{align*}
-    \end{ncasos}
-\end{proof}
+\begin{theorem}[\href{https://drive.google.com/file/d/1OIK_OJCp6hyW0BqqSC6uLjVkKr5Uza1U/view}{Slide 3}]
+    \label{thm:slide:mn1}
+    Se $G$ é um grafo conexo e acíclico (i.e., uma árvore), então $m(G) = n(G) - 1$.
+\end{theorem}
