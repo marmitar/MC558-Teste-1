@@ -15,14 +15,16 @@ Seja $G$ um grafo $(X,Y)$-bipartido. Suponha que todo vértice em $X$ tem grau $
         \fam{E} = \set{\set{e \in E(G) \mid x \in \varpsi_G(e)} \mid x \in X}
     \]
 
-    Por definição, nenhuma aresta de $G$ é incidente a dois elementos de $X$. Logo, $\fam{E}$ é disjunta por pares. Ademais, como toda aresta de $G$ é incidente a pelo menos um elemento de $X$, a família $\fam{E}$ cobre $E$, ou seja, $\bigcup \fam{E} = E$. Por conta disso, temos que
+    Por definição, nenhuma aresta de $G$ é incidente a dois elementos de $X$. Logo, $\fam{E}$ é disjunta por pares. Ademais, como toda aresta de $G$ é incidente a pelo menos um elemento de $X$, a família $\fam{E}$ cobre $E$, ou seja, $\bigcup \fam{E} = E$.
+
+    Então, $E$ pode ser dividos nos conjuntos de $\fam{E}$, de forma que
     \begin{align*}
         \abs{E} &= \sum_{\fam{E}_x \in \fam{E}} \abs{\fam{E}_x} \\
             &= \sum_{x \in X} \abs{\set{e \mid x \in \varpsi(e)}} \\
             &= \sum_{x \in X} \grau(x)
     \end{align*}
 
-    De forma similar, chegamos a uma identidade equivalente para $Y$.
+    De forma similar, podemos chegar a uma identidade equivalente para $Y$.
 
     Portanto,
     \begin{equation*}
@@ -72,4 +74,4 @@ Na situação proposta, teríamos que
     \abs{X} = \frac{7 \times 100.000.642}{7 + 3} = 70.000.449,4 \not\in \natural
 \]
 
-Como $\abs{X}$ não é inteiro, podemos afirmar que não pode existir um grafo com esses valores.
+Como $\abs{X}$ não é inteiro, então não pode existir um grafo com esses valores.

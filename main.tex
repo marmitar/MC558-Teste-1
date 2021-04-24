@@ -39,8 +39,8 @@
     \hyperref[#2]{\swaptext{#1*{#2}}}%
 }}
 
-\newcommand{\equref}[1]{%
-    \textref{#1}{(##1)}
+\newcommand{\equref}[2][\ref]{%
+    \textref[#1]{#2}{(##1)}
 }
 
 \renewcommand{\url}[1]{

@@ -28,8 +28,11 @@ Seja $d_1 \geq d_2 \geq \cdots \geq d_n$ uma sequência de inteiros positivos. P
     Suponha que exista uma árvore $T = (V, E)$ cuja sequência de graus é $d$. Então, podemos considerar $V = \set{v_1, \ldots, v_n}$ tal que $\grau(v_i) = d_i$ para todo $1 \leq i \leq n$. Isso implica que $\abs{V} = n$ e, portanto,
     \begin{align*}
         \sum_{i = 1}^n d_i &= \sum_{i = 1}^n \grau(v_i) \\
-            &= 2 \abs{E} = 2 m(T) \tag*{\equref{thm:slide:sd2e}} \\
-            &= 2 \left(n(T) - 1\right) \tag*{\equref{thm:slide:mn1}} \\
+            &= 2 \abs{E}
+                \tag*{\equref[\cref]{thm:slide:sd2e}} \\
+            &= 2 \cdot m(T)  \\
+            &= 2 \left(n(T) - 1\right)
+                \tag*{\equref[\cref]{thm:slide:mn1}} \\
             &= 2 n - 2 \qedhere
     \end{align*}
 \end{proof}

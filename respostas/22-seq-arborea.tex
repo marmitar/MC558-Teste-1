@@ -20,9 +20,9 @@
                 &= 2n - 2
         \end{align*}
 
-        Logo, $S'$ é uma sequência arbórea e, pela hipótese indutiva, temos uma árvore $T' = (V, E)$ cuja sequência de graus é igual a $S'$. Além disso, temos um vértice $v_k \in V$ tal que $\grau_{T'}(v_k) = s_k$.
+        Logo, $S'$ é uma sequência arbórea e, pela hipótese indutiva, temos uma árvore $T' = (V, E)$ cuja sequência de graus é igual a $S'$. Além disso, temos um vértice $v_k \in V$ tal que $\grau_{T'}(v_k) = s'_k$.
 
-        Seja $v_{n + 1} \not\in V$ um novo vértice e considere o grafo $T = (V \cup \set{v_{n + 1}}, E \cup \set{v_k v_{n + 1}})$. Por $v_k$ ser o único novo vértice, $T$ continua simples e acíclica. Além disso, $v_k v_{n + 1}$ conecta o novo vértice em $T'$, fazendo com que $T$ também seja conexo e, portanto, uma árvore.
+        Seja $v_{n + 1} \not\in V$ um novo vértice e considere o grafo $T = (V \cup \set{v_{n + 1}}, E \cup \set{v_k v_{n + 1}})$. Por $v_k$ ser um vértice novo, a nova aresta mantém $T$ simples e acíclica. Além disso, $v_k v_{n + 1}$ conecta o novo vértice em $T'$, fazendo com que $T$ também seja conexo e, portanto, uma árvore.
 
         Por fim, como $v_k v_{n + 1}$ é a única nova aresta de $T'$,  $\grau_T(v_k) = \grau_{T'}(v_k) + 1 = s'_k + 1 = s_k$ e $\grau_T(v_{n + 1}) = 1 = s_{n + 1}$, mantendo os demais graus. Portanto, $S$ é a sequência de graus de $T$. \qedhere
     \end{ncasos}
