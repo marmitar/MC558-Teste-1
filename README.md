@@ -1,5 +1,8 @@
 # MC558 2020s1 - Teste 1
 
+- [Enunciado](enunciado.pdf)
+- [Entrega](/uploads/36a8acdd51edf798f83ed631b2fad3c8/Documento.pdf)
+
 ## Item 1
 
 Seja G um grafo (X,Y)-bipartido. Suponha que todo vértice em X tem grau k > 0 e todo vértice em Y tem grau r > 0. Descreva uma identidade (fórmula) envolvendo apenas k, r, X e Y.
