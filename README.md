@@ -1,7 +1,7 @@
-# MC558 2020s1 - Teste 1
+# Análise de Algoritmos II (MC558) - Teste 1
 
-- [Enunciado](enunciado.pdf)
-- [Entrega](/uploads/36a8acdd51edf798f83ed631b2fad3c8/Documento.pdf)
+- [Enunciado](./enunciado.pdf)
+- [Entrega](./entrega.pdf)
 
 ## Item 1
 
